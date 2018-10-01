@@ -38,6 +38,7 @@ class App extends Component {
     let text = this.state.encriptar
     let textBytes = aesjs.utils.utf8.toBytes(text);
     let aesCtr = new aesjs.ModeOfOperation.ctr(key, new aesjs.Counter(5));
+    console.log(aesCtr)
     let encryptedBytes = aesCtr.encrypt(textBytes);
     let encryptedHex = aesjs.utils.hex.fromBytes(encryptedBytes);
     this.setState({
@@ -49,6 +50,7 @@ class App extends Component {
   onDesencriptar(){
     let text = this.state.desencriptar
     let aesCtr = new aesjs.ModeOfOperation.ctr(key, new aesjs.Counter(5));
+    console.log(aesCtr)
     let decryptedBytes = aesCtr.decrypt(this.state.bytesEncriptados);
     let decryptedText = aesjs.utils.utf8.fromBytes(decryptedBytes);
     this.setState({
@@ -61,13 +63,13 @@ class App extends Component {
     return (
       <div>
         <Row>
-          <Col span={12}>
+          <Col>
             <Card style={{margin: 30}}>
               <Form>
                 <FormItem>
                   <InputGroup compact>
                     <Input 
-                      style={{width: '60%'}} 
+                      style={{width: '80%'}} 
                       onChange={this.onChange} 
                       type="text" 
                       name="encriptar" 
@@ -80,45 +82,7 @@ class App extends Component {
                 <FormItem>
                   <InputGroup compact>
                     <Input 
-                      style={{width: '60%'}} 
-                      onChange={this.onChange} 
-                      type="text" 
-                      name="desencriptar" 
-                      id="desencriptar" 
-                      placeholder="Desencriptar texto" />
-                        <Button onClick={this.onDesencriptar}>Desencriptar</Button>
-                  </InputGroup>
-
-                </FormItem>
-              </Form>
-            </Card>
-            <Card style={{margin: 30}} title="Texto Encriptado">
-              {this.state.textoEncriptado}
-            </Card>
-            <Card style={{margin: 30}} title="Texto Desencriptado">
-              {this.state.textoDesencriptado}
-            </Card>
-          </Col>
-          <Col span={12}>
-            <Card style={{margin: 30}}>
-              <Form>
-                <FormItem>
-                  <InputGroup compact>
-                    <Input 
-                      style={{width: '60%'}} 
-                      onChange={this.onChange} 
-                      type="text" 
-                      name="encriptar" 
-                      id="encriptar" 
-                      placeholder="Encriptar texto" />
-                        <Button onClick={this.onEncriptar}>Encriptar</Button>
-                  </InputGroup>
-
-                </FormItem>
-                <FormItem>
-                  <InputGroup compact>
-                    <Input 
-                      style={{width: '60%'}} 
+                      style={{width: '80%'}} 
                       onChange={this.onChange} 
                       type="text" 
                       name="desencriptar" 
