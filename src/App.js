@@ -42,7 +42,6 @@ class App extends Component {
     })
   }
   onEncriptarAES(){
-    debugger
     let texto = this.state.aes_input_encriptar
     let chave = this.state.aes_chave;
     let start = window.performance.now()
@@ -102,7 +101,7 @@ class App extends Component {
     return (
       <div>
         <Row>
-          <Col span={12}>
+          <Col xs={24} sm={24} md={12} lg={12} xl={12} >
             <Card title="AES">
               <Card style={{margin: 30}}>
                 <Form>
@@ -120,28 +119,28 @@ class App extends Component {
                   </FormItem>
 
                   <FormItem>
-                    <InputGroup compact>
+                    <InputGroup>
                       <Input 
-                        style={{width: '50%'}} 
+                        style={{width: '25vw, marginTop: 20'}} 
                         onChange={this.onChange} 
                         type="text" 
                         name="aes_input_encriptar" 
                         id="aes_input_encriptar" 
                         placeholder="Encriptar texto" />
-                          <Button onClick={this.onEncriptarAES}>Encriptar</Button>
+                          <Button style={{marginTop: 20}} type='primary' onClick={this.onEncriptarAES}>Encriptar</Button>
                     </InputGroup>
                   </FormItem>
 
                   <FormItem>
-                    <InputGroup compact>
+                    <InputGroup>
                       <Input 
-                        style={{width: '50%'}} 
+                        style={{width: '25vw, marginTop: 20'}} 
                         onChange={this.onChange} 
                         type="text" 
                         name="aes_input_decriptar" 
                         id="aes_input_decriptar" 
                         placeholder="Desencriptar texto" />
-                          <Button onClick={this.onDesencriptarAES}>Desencriptar</Button>
+                          <Button style={{marginTop: 20}} type='primary' onClick={this.onDesencriptarAES}>Desencriptar</Button>
                     </InputGroup>
 
                   </FormItem>
@@ -155,7 +154,7 @@ class App extends Component {
               </Card>
             </Card>
           </Col>
-          <Col span={12}>
+          <Col xs={24} sm={24} md={12} lg={12} xl={12} >
             <Card title="DES">
               <Card style={{margin: 30}}>
                 <Form>
@@ -173,28 +172,28 @@ class App extends Component {
                   </FormItem>
 
                   <FormItem>
-                    <InputGroup compact>
+                    <InputGroup>
                       <Input 
-                        style={{width: '50%'}} 
+                        style={{width: '25vw, marginTop: 20'}} 
                         onChange={this.onChange} 
                         type="text" 
                         name="des_input_encriptar" 
                         id="des_input_encriptar" 
                         placeholder="Encriptar texto" />
-                          <Button onClick={this.onEncriptarDES}>Encriptar</Button>
+                          <Button style={{marginTop: 20}} type='primary' onClick={this.onEncriptarDES}>Encriptar</Button>
                     </InputGroup>
                   </FormItem>
 
                   <FormItem>
-                    <InputGroup compact>
+                    <InputGroup>
                       <Input 
-                        style={{width: '50%'}} 
+                        style={{width: '25vw, marginTop: 20'}} 
                         onChange={this.onChange} 
                         type="text" 
                         name="des_input_decriptar" 
                         id="des_input_decriptar" 
                         placeholder="Desencriptar texto" />
-                          <Button onClick={this.onDesencriptarDES}>Desencriptar</Button>
+                          <Button style={{marginTop: 20}} type='primary' onClick={this.onDesencriptarDES}>Desencriptar</Button>
                     </InputGroup>
 
                   </FormItem>
