@@ -42,6 +42,7 @@ class App extends Component {
     })
   }
   onEncriptarAES(){
+    debugger
     let texto = this.state.aes_input_encriptar
     let chave = this.state.aes_chave;
     let start = window.performance.now()
@@ -164,8 +165,8 @@ class App extends Component {
                         style={{width: '100%'}} 
                         onChange={this.onChange} 
                         type="text" 
-                        name="aes_chave" 
-                        id="aes_chave"
+                        name="des_chave" 
+                        id="des_chave"
                         value={this.state.des_chave}
                         placeholder="Chave" />
                     </InputGroup>
