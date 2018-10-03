@@ -98,12 +98,17 @@ class App extends Component {
 
   render() {
     return (
-      <div style={{backgroundImage: 'url(background.png)'}}>
-        <div style={{padding: 50}}>
+      <div style={{backgroundImage: 'url(background.jpeg)'}}>
+        <div style={{backgroundColor: "rgba(0,0,0,0.9)"}}>
+          <h3 style={{marginLeft: '4vw', fontFamily: 'Courier New', color: "white"}}>Cassiano S Franco</h3>
+          <h3 style={{marginLeft: '4vw', fontFamily: 'Courier New', color: "white"}}>Eduardo Ferrarezi</h3>
+          <h3 style={{marginLeft: '4vw', fontFamily: 'Courier New', color: "white"}}>Fabio Jr Rossi</h3>
+        </div>
+        <div style={{paddingLeft: '2vw', paddingRight: '2vw', paddingBottom: '2vw'}}>
           <Row>
             <Col xs={24} sm={24} md={12} lg={12} xl={12} >
-              <Card style={{margin: 20}} title="AES">
-                <Card style={{margin: 30}}>
+              <Card style={{margin: '2vw'}} title="AES">
+                <Card style={{margin: '2vw'}}>
                   <Form>
                     <FormItem>
                       <InputGroup>
@@ -146,17 +151,17 @@ class App extends Component {
                     </FormItem>
                   </Form>
                 </Card>
-                <Card style={{wordWrap: 'break-word', margin: 30}} title={`Texto Encriptado - ${this.state.aes_tempo_encriptar.toFixed(5)}ms`}>
+                <Card style={{wordWrap: 'break-word', margin: '2vw'}} title={`Texto Encriptado - ${this.state.aes_tempo_encriptar.toFixed(5)}ms`}>
                   {this.state.aes_output_encriptar}
                 </Card>
-                <Card style={{wordWrap: 'break-word', margin: 30}} title={`Texto Desencriptado - ${this.state.aes_tempo_decriptar.toFixed(5)}ms`}>
+                <Card style={{wordWrap: 'break-word', margin: '2vw'}} title={`Texto Desencriptado - ${this.state.aes_tempo_decriptar.toFixed(5)}ms`}>
                   {this.state.aes_output_decriptar}
                 </Card>
               </Card>
             </Col>
             <Col xs={24} sm={24} md={12} lg={12} xl={12} >
-              <Card style={{margin: 20}} title="DES">
-                <Card style={{margin: 30}}>
+              <Card style={{margin: '2vw'}} title="DES">
+                <Card style={{margin: '2vw'}}>
                   <Form>
                     <FormItem>
                       <InputGroup>
@@ -199,10 +204,10 @@ class App extends Component {
                     </FormItem>
                   </Form>
                 </Card>
-                <Card style={{wordWrap: 'break-word', margin: 30}} title={`Texto Encriptado - ${this.state.des_tempo_encriptar.toFixed(5)}ms`}>
+                <Card style={{wordWrap: 'break-word', margin: '2vw'}} title={`Texto Encriptado - ${this.state.des_tempo_encriptar.toFixed(5)}ms`}>
                   {this.state.des_output_encriptar}
                 </Card>
-                <Card style={{wordWrap: 'break-word', margin: 30}} title={`Texto Desencriptado - ${this.state.des_tempo_decriptar.toFixed(5)}ms`}>
+                <Card style={{wordWrap: 'break-word', margin: '2vw'}} title={`Texto Desencriptado - ${this.state.des_tempo_decriptar.toFixed(5)}ms`}>
                   {this.state.des_output_decriptar}
                 </Card>
               </Card>
