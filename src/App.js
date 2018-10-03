@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import './App.css';
 import { Form, Input, Row, Col, Button, Card } from 'antd';
 
 const FormItem = Form.Item;
@@ -99,115 +98,117 @@ class App extends Component {
 
   render() {
     return (
-      <div>
-        <Row>
-          <Col xs={24} sm={24} md={12} lg={12} xl={12} >
-            <Card title="AES">
-              <Card style={{margin: 30}}>
-                <Form>
-                  <FormItem>
-                    <InputGroup>
-                      <Input 
-                        style={{width: '100%'}} 
-                        onChange={this.onChange} 
-                        type="text" 
-                        name="aes_chave" 
-                        id="aes_chave"
-                        value={this.state.aes_chave}
-                        placeholder="Chave" />
-                    </InputGroup>
-                  </FormItem>
+      <div style={{backgroundImage: 'url(background.png)'}}>
+        <div style={{padding: 50}}>
+          <Row>
+            <Col xs={24} sm={24} md={12} lg={12} xl={12} >
+              <Card style={{margin: 20}} title="AES">
+                <Card style={{margin: 30}}>
+                  <Form>
+                    <FormItem>
+                      <InputGroup>
+                        <Input 
+                          style={{width: '100%'}} 
+                          onChange={this.onChange} 
+                          type="text" 
+                          name="aes_chave" 
+                          id="aes_chave"
+                          value={this.state.aes_chave}
+                          placeholder="Chave" />
+                      </InputGroup>
+                    </FormItem>
 
-                  <FormItem>
-                    <InputGroup>
-                      <Input 
-                        style={{width: '25vw, marginTop: 20'}} 
-                        onChange={this.onChange} 
-                        type="text" 
-                        name="aes_input_encriptar" 
-                        id="aes_input_encriptar" 
-                        placeholder="Encriptar texto" />
-                          <Button style={{marginTop: 20}} type='primary' onClick={this.onEncriptarAES}>Encriptar</Button>
-                    </InputGroup>
-                  </FormItem>
+                    <FormItem>
+                      <InputGroup>
+                        <Input 
+                          style={{width: '25vw, marginTop: 20'}} 
+                          onChange={this.onChange} 
+                          type="text" 
+                          name="aes_input_encriptar" 
+                          id="aes_input_encriptar" 
+                          placeholder="Encriptar texto" />
+                            <Button style={{marginTop: 20}} type='primary' onClick={this.onEncriptarAES}>Encriptar</Button>
+                      </InputGroup>
+                    </FormItem>
 
-                  <FormItem>
-                    <InputGroup>
-                      <Input 
-                        style={{width: '25vw, marginTop: 20'}} 
-                        onChange={this.onChange} 
-                        type="text" 
-                        name="aes_input_decriptar" 
-                        id="aes_input_decriptar" 
-                        placeholder="Desencriptar texto" />
-                          <Button style={{marginTop: 20}} type='primary' onClick={this.onDesencriptarAES}>Desencriptar</Button>
-                    </InputGroup>
+                    <FormItem>
+                      <InputGroup>
+                        <Input 
+                          style={{width: '25vw, marginTop: 20'}} 
+                          onChange={this.onChange} 
+                          type="text" 
+                          name="aes_input_decriptar" 
+                          id="aes_input_decriptar" 
+                          placeholder="Desencriptar texto" />
+                            <Button style={{marginTop: 20}} type='primary' onClick={this.onDesencriptarAES}>Desencriptar</Button>
+                      </InputGroup>
 
-                  </FormItem>
-                </Form>
+                    </FormItem>
+                  </Form>
+                </Card>
+                <Card style={{wordWrap: 'break-word', margin: 30}} title={`Texto Encriptado - ${this.state.aes_tempo_encriptar.toFixed(5)}ms`}>
+                  {this.state.aes_output_encriptar}
+                </Card>
+                <Card style={{wordWrap: 'break-word', margin: 30}} title={`Texto Desencriptado - ${this.state.aes_tempo_decriptar.toFixed(5)}ms`}>
+                  {this.state.aes_output_decriptar}
+                </Card>
               </Card>
-              <Card style={{margin: 30}} title={`Texto Encriptado - ${this.state.aes_tempo_encriptar.toFixed(5)}ms`}>
-                {this.state.aes_output_encriptar}
-              </Card>
-              <Card style={{margin: 30}} title={`Texto Desencriptado - ${this.state.aes_tempo_decriptar.toFixed(5)}ms`}>
-                {this.state.aes_output_decriptar}
-              </Card>
-            </Card>
-          </Col>
-          <Col xs={24} sm={24} md={12} lg={12} xl={12} >
-            <Card title="DES">
-              <Card style={{margin: 30}}>
-                <Form>
-                  <FormItem>
-                    <InputGroup>
-                      <Input 
-                        style={{width: '100%'}} 
-                        onChange={this.onChange} 
-                        type="text" 
-                        name="des_chave" 
-                        id="des_chave"
-                        value={this.state.des_chave}
-                        placeholder="Chave" />
-                    </InputGroup>
-                  </FormItem>
+            </Col>
+            <Col xs={24} sm={24} md={12} lg={12} xl={12} >
+              <Card style={{margin: 20}} title="DES">
+                <Card style={{margin: 30}}>
+                  <Form>
+                    <FormItem>
+                      <InputGroup>
+                        <Input 
+                          style={{width: '100%'}} 
+                          onChange={this.onChange} 
+                          type="text" 
+                          name="des_chave" 
+                          id="des_chave"
+                          value={this.state.des_chave}
+                          placeholder="Chave" />
+                      </InputGroup>
+                    </FormItem>
 
-                  <FormItem>
-                    <InputGroup>
-                      <Input 
-                        style={{width: '25vw, marginTop: 20'}} 
-                        onChange={this.onChange} 
-                        type="text" 
-                        name="des_input_encriptar" 
-                        id="des_input_encriptar" 
-                        placeholder="Encriptar texto" />
-                          <Button style={{marginTop: 20}} type='primary' onClick={this.onEncriptarDES}>Encriptar</Button>
-                    </InputGroup>
-                  </FormItem>
+                    <FormItem>
+                      <InputGroup>
+                        <Input 
+                          style={{width: '25vw, marginTop: 20'}} 
+                          onChange={this.onChange} 
+                          type="text" 
+                          name="des_input_encriptar" 
+                          id="des_input_encriptar" 
+                          placeholder="Encriptar texto" />
+                            <Button style={{marginTop: 20}} type='primary' onClick={this.onEncriptarDES}>Encriptar</Button>
+                      </InputGroup>
+                    </FormItem>
 
-                  <FormItem>
-                    <InputGroup>
-                      <Input 
-                        style={{width: '25vw, marginTop: 20'}} 
-                        onChange={this.onChange} 
-                        type="text" 
-                        name="des_input_decriptar" 
-                        id="des_input_decriptar" 
-                        placeholder="Desencriptar texto" />
-                          <Button style={{marginTop: 20}} type='primary' onClick={this.onDesencriptarDES}>Desencriptar</Button>
-                    </InputGroup>
+                    <FormItem>
+                      <InputGroup>
+                        <Input 
+                          style={{width: '25vw, marginTop: 20'}} 
+                          onChange={this.onChange} 
+                          type="text" 
+                          name="des_input_decriptar" 
+                          id="des_input_decriptar" 
+                          placeholder="Desencriptar texto" />
+                            <Button style={{marginTop: 20}} type='primary' onClick={this.onDesencriptarDES}>Desencriptar</Button>
+                      </InputGroup>
 
-                  </FormItem>
-                </Form>
+                    </FormItem>
+                  </Form>
+                </Card>
+                <Card style={{wordWrap: 'break-word', margin: 30}} title={`Texto Encriptado - ${this.state.des_tempo_encriptar.toFixed(5)}ms`}>
+                  {this.state.des_output_encriptar}
+                </Card>
+                <Card style={{wordWrap: 'break-word', margin: 30}} title={`Texto Desencriptado - ${this.state.des_tempo_decriptar.toFixed(5)}ms`}>
+                  {this.state.des_output_decriptar}
+                </Card>
               </Card>
-              <Card style={{margin: 30}} title={`Texto Encriptado - ${this.state.des_tempo_encriptar.toFixed(5)}ms`}>
-                {this.state.des_output_encriptar}
-              </Card>
-              <Card style={{margin: 30}} title={`Texto Desencriptado - ${this.state.des_tempo_decriptar.toFixed(5)}ms`}>
-                {this.state.des_output_decriptar}
-              </Card>
-            </Card>
-          </Col>
-        </Row>
+            </Col>
+          </Row>
+        </div>
       </div>
     );
   } 
